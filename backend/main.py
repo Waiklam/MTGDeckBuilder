@@ -1,14 +1,15 @@
 from mtgsdk import Card
 from flask import Flask, request
+from flask_cors import CORS
 import mysql.connector
 import json
 
 mydb = mysql.connector.connect(
-    host="sql5.freesqldatabase.com",
-    user="sql5691421",
-    passwd="5e8pdUpdja",
-    auth_plugin="mysql_native_password",
-    database="sql5691421"
+    host="",
+    user="",
+    passwd="",
+    auth_plugin="",
+    database=""
 )
 
 mycursor = mydb.cursor()
@@ -24,6 +25,7 @@ getCard = """
 """
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/card", methods=["POST"])
 def card():
@@ -43,7 +45,7 @@ def card():
             'img': card.image_url,
             'id': card.multiverse_id
         })
-    return cardList
+    return cardList 
 
 @app.route("/save", methods=["POST"])
 def save():

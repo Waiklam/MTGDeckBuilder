@@ -10,13 +10,15 @@ function App() {
   const [deck, setDeck] = useState([]);
   
   const search = useCallback((searchTerm) => {
-    fetch('/card', {
+    fetch("https://pi5bzkj7f4p5cij6amvmgb5fwm0ekksw.lambda-url.us-east-2.on.aws/" , {
       method: "POST",
-      headers: { "Content-type" : "application/json" },
-      body: JSON.stringify(searchTerm)
+      headers: { 
+        "Content-type" : "application/json"
+      },
+      body: searchTerm
     }).then(res =>
       res.json()).then(data => {
-        setData(data);
+        return setData(data);
     })
   }, [])
 
@@ -31,18 +33,22 @@ function App() {
   }, [])
 
   const saveDeck = useCallback((user, pass) => {
-    fetch('/save', {
+    fetch("https://vxllz3nhmdwxl7fgxeqgw43vt40fjdsb.lambda-url.us-east-2.on.aws/", {
       method: "POST",
-      headers: { "Content-type" : "application/json" },
-      body: JSON.stringify([user, pass, deck])
+      headers: { 
+        "Content-type" : "application/json"
+      },
+      body: JSON.stringify({ "user": user, "pass": pass, "deck": deck })
     })
   }, [deck])
 
   const getDeck = useCallback((user, pass) => {
-    fetch('/retrieveDeck', {
+    fetch("https://i7gmxmnbdm5xt3jgx56evjxutm0xtcqa.lambda-url.us-east-2.on.aws/", {
       method: "POST",
-      headers: { "Content-type" : "application/json" },
-      body: JSON.stringify([user, pass])
+      headers: { 
+        "Content-type" : "application/json"
+      },
+      body: JSON.stringify({ "user": user, "pass": pass })
     }).then(res =>
       res.json()).then(data => {
         setDeck(data);        
@@ -51,7 +57,7 @@ function App() {
 
   return (
     <div className='flex flex-col min-h-screen items-center flex-wrap dark:bg-black bg-white duration-200'>
-      <DeckList deck={deck} onRemove={removeCard} onSave={saveDeck} getDeck={getDeck} />
+      <DeckList deck={deck} onRemove={removeCard} onSave={saveDeck} getDeck={getDeck} onSearch={search} />
       <div className='lg:hidden fill-m min-w-96 sm:w-11/12 md:w-5/6 mt-20 md:mt-32 z-20'>
         <SearchBar onSearch={search} />
       </div>

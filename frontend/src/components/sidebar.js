@@ -5,7 +5,7 @@ import SearchBar from "./searchbar";
 
 
 const DeckList = (props) => {
-    const { deck, onRemove, onSave, getDeck } = props;
+    const { deck, onRemove, onSave, getDeck, onSearch } = props;
     const [showSidebar, setShowSidebar] = useState(false);
     const [user, setUser] = useState('');
     const [pass, setPass] = useState('');
@@ -46,7 +46,7 @@ const DeckList = (props) => {
                 </div>
                 
                 <div className="hidden lg:flex lg:w-1/2 items-center justify-center right-0 ml-20">
-                    <SearchBar />
+                    <SearchBar onSearch={onSearch} />
                 </div>
             </div>   
             <div className={`left-0 sm:w-1/3 sm:min-w-96 w-full sm:border-r-2 border-black bg-white p-10 fixed text-black h-full ease-in-out duration-300 z-50 overscroll-contain ${showSidebar ? "translate-x-0 " : "-translate-x-full"}`}>
