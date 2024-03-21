@@ -68,8 +68,8 @@ const DeckList = (props) => {
                             <input type="password" id="pass" name="password" className="border-2 rounded-lg px-1 w-60 text-xl" onChange={handlePass} ></input>
                         </div>
                         <div className="flex flex-row justify-evenly">
-                            <submit className="text-md text-center my-2 mr-2 px-4 py-1 inline-flex items-center gap-x-2 text-md font-semibold rounded-lg border border-transparent bg-slate-400 text-white hover:bg-slate-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" onClick={handleGet} >Get Deck</submit>
-                            <submit className="text-md text-center my-2 px-4 py-1 inline-flex items-center gap-x-2 text-md font-semibold rounded-lg border border-transparent bg-slate-400 text-white hover:bg-slate-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" onClick={handleSave} >Save Deck</submit>
+                            <submit className="text-md text-center my-2 mr-2 px-4 py-1 inline-flex items-center gap-x-2 text-md font-semibold rounded-lg border border-transparent bg-slate-400 text-white hover:bg-slate-600 disabled:opacity-50 disabled:pointer-events-none" onClick={handleGet} >Get Deck</submit>
+                            <submit className="text-md text-center my-2 px-4 py-1 inline-flex items-center gap-x-2 text-md font-semibold rounded-lg border border-transparent bg-slate-400 text-white hover:bg-slate-600 disabled:opacity-50 disabled:pointer-events-none" onClick={handleSave} >Save Deck</submit>
                         </div>
                         
                     </form>

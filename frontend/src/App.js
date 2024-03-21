@@ -56,7 +56,7 @@ function App() {
   }, []) 
 
   return (
-    <div className='flex flex-col min-h-screen items-center flex-wrap dark:bg-black bg-white duration-200'>
+    <div className='flex flex-col min-h-screen items-center flex-wrap bg-white duration-200'>
       <DeckList deck={deck} onRemove={removeCard} onSave={saveDeck} getDeck={getDeck} onSearch={search} />
       <div className='lg:hidden fill-m min-w-96 sm:w-11/12 md:w-5/6 mt-20 md:mt-32 z-20'>
         <SearchBar onSearch={search} />

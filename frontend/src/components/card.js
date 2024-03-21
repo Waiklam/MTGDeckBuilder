@@ -21,7 +21,7 @@ const Card = (props) => {
                 <p className=''><strong>Toughness: </strong>{card.toughness}</p>
                 <p className=''><strong>Artist: </strong>{card.artist}</p>
                 <p className=''><strong>Text: </strong></p><p className=''>{card.text}</p>
-                <button type="button" className="py-3 px-4 mt-2 inline-flex items-center gap-x-2 font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" onClick={addCard}>
+                <button type="button" className="py-3 px-4 mt-2 inline-flex items-center gap-x-2 font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" onClick={addCard}>
                 Add to Deck
                 </button>
             </div>
